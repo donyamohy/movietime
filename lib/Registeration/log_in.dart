@@ -20,14 +20,20 @@ class _SignInState extends State<SignIn> {
 
   bool _termsChecked = true;
 
+  /* void onPressed() {
+    context.read<AuthenticationService>().signIn(
+        email: emailController.text.trim(),
+        password: passwordController.text.trim());
+  }*/
+
   void onPressedSubmit() {
     if (_formKey.currentState.validate() && _termsChecked) {
       _formKey.currentState.save();
       //   Navigator.of(context).pushNamed(HomeScreen.routehome);
-      print("Name " + name);
+
       print("Email " + email);
       print("Password " + password);
-      print("Termschecked " + _termsChecked.toString());
+
       Scaffold.of(context)
           .showSnackBar(SnackBar(content: Text('Form Submitted')));
     }
@@ -174,6 +180,10 @@ class _SignInState extends State<SignIn> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
                     onPressed: () {
+                      /*  context.read<AuthenticationService>().signIn(
+                          email: emailController.text.trim(),
+                          password: passwordController.text.trim());*/
+                      onPressedSubmit();
                       context.read<AuthenticationService>().signIn(
                           email: emailController.text.trim(),
                           password: passwordController.text.trim());
