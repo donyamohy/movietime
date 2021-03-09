@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:movietime/main.dart';
 import '../Registeration/log_in.dart';
 import '../Slider/Slide.dart';
 //import 'package:movie_time_app/Slider/slide.dart';
 import '../Slider/slide_item.dart';
 //import 'package:movie_time_app/Registeration/login.dart';
-import '../Registeration/signup.dart';
+//import '../Registeration/signup.dart';
 import 'dart:async';
 //import 'Registeration/log_in.dart';
 //import 'package:movie_time_app/login_screen.dart';
@@ -48,47 +49,48 @@ class _StartScreenState extends State<StartScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-            color: Colors.white,
-            child: Padding(
+      color: Colors.white,
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            Expanded(
+                child: PageView.builder(
+                    scrollDirection: Axis.horizontal,
+                    controller: _pageController,
+                    onPageChanged: _onPageChanged,
+                    itemCount: slidelist.length,
+                    itemBuilder: (ctx, i) => SlideItem(i))),
+            // SizedBox(
+            //  height: 20,
+            // ),
+            FlatButton(
+              onPressed: () {
+                //  Navigator.of(context)
+                // .pushNamed(AuthenticationWrapper.routerauth);
+              },
+              child: Text('Get Started',
+                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5)),
               padding: const EdgeInsets.all(20),
-              child: Column(children: [
-                Expanded(
-                    child: PageView.builder(
-                        scrollDirection: Axis.horizontal,
-                        controller: _pageController,
-                        onPageChanged: _onPageChanged,
-                        itemCount: slidelist.length,
-                        itemBuilder: (ctx, i) => SlideItem(i))),
-                // SizedBox(
-                //  height: 20,
-                // ),
-                FlatButton(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed(SignUpForm.routesignup);
-                  },
-                  child: Text('Get Started',
-                      style:
-                          TextStyle(fontSize: 17, fontWeight: FontWeight.bold)),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5)),
-                  padding: const EdgeInsets.all(20),
-                  color: Theme.of(context).primaryColor,
-                  textColor: Colors.white,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Already have an account?',
-                        //textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 20)),
-                    FlatButton(
-                        onPressed: () {
-                          //  Navigator.of(context).pushNamed(SignIn.routelogin);
-                        },
-                        child: Text('Login', style: TextStyle(fontSize: 18)))
-                  ],
-                ),
-              ]),
-            )));
+              color: Theme.of(context).primaryColor,
+              textColor: Colors.white,
+            ),
+            // Row(
+            // mainAxisAlignment: MainAxisAlignment.center,
+            //children: [
+            //Text('Already have an account?',
+            //textAlign: TextAlign.center,
+            //  style: TextStyle(fontSize: 20)),
+            //FlatButton(
+            //  onPressed: () {
+            //  Navigator.of(context).pushNamed(SignIn.routelogin);
+            //},
+            //     child: Text('Login', style: TextStyle(fontSize: 18)))
+          ],
+        ),
+      ),
+    ));
   }
 }
