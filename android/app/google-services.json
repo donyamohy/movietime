@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "435586415164",
+    "project_id": "movietime-fc84a",
+    "storage_bucket": "movietime-fc84a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435586415164:android:d083d980bcb8a77ef9a139",
+        "android_client_info": {
+          "package_name": "com.Donya.movietime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "435586415164-bphapvcicmg6v57dgh0q9bo68i48iva3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9yBCSDuNqn-WRbLL_YNgtQ406_PNCbCQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "435586415164-bphapvcicmg6v57dgh0q9bo68i48iva3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
