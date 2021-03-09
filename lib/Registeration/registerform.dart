@@ -278,9 +278,11 @@ class SignUpState extends State<SignUp> {
                       elevation: 7,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
-                      onPressed: onPressedSubmit,
+                      onPressed: () {
+                        onPressedSubmit();
+                        Navigator.of(context).pushNamed(SignIn.routesigin);
+                      },
                       /*  */
-                      //   onPressedSubmit();
 
                       color: Colors.white,
                       child: Text('SIGNUP',
