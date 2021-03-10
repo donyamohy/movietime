@@ -6,6 +6,7 @@ import '../movies/vertical_list_item.dart';
 import '../screens/editprofile.dart';
 import 'package:provider/provider.dart';
 import 'package:movietime/providers/auth.dart';
+import  '../screens/maps.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routehome = '/home';
@@ -90,7 +91,7 @@ class HomeScreen extends StatelessWidget {
                       'locations',
                     ),
                     onPressed: () {
-                     
+                      Navigator.of(context).pushNamed(GoogleMaps.routename);
                     },
                   )),
               new ListTile(

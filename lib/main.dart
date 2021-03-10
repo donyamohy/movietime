@@ -13,6 +13,7 @@ import 'screens/home_screen.dart';
 import 'screens/editprofile.dart';
 //import 'Categories/gerens.dart';
 import 'package:provider/provider.dart';
+import  'package:movietime/maps/google_maps.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -50,6 +51,7 @@ class MyApp extends StatelessWidget {
           EditProfilePage.routeEditProfile: (ctx) => EditProfilePage(),
           Settings.routesettings: (ctx) => Settings(),
           Comment.routecomment: (ctx) => Comment(),
+          GoogleMaps.routename :(ctx)=> GoogleMaps(),
         },
       ),
     );

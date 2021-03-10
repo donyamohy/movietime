@@ -93,7 +93,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   ),
                   buildTextField("Username", "Donya Mohy", false),
                   buildTextField("E-mail", "DonyaMohy@gmail.com", false),
-               //   buildTextField("Password", " 123456789", false),
+                  buildTextField("Password", " 123456789", false),
                   buildTextField("Phone number", "01289265555", false),
                   buildTextField("Location", "Cairo , Egypt", false),
                   SizedBox(
