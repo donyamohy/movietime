@@ -83,6 +83,16 @@ class HomeScreen extends StatelessWidget {
                       Navigator.of(context).pushNamed(Settings.routesettings);
                     },
                   )),
+                  new ListTile(
+                  trailing: new Icon(Icons.location_on, color: Colors.grey[800]),
+                  title: new FlatButton(
+                    child: Text(
+                      'locations',
+                    ),
+                    onPressed: () {
+                     
+                    },
+                  )),
               new ListTile(
                   trailing: new Icon(Icons.logout, color: Colors.grey[800]),
                   title: new FlatButton(
