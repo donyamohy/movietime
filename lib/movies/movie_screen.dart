@@ -1,7 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:movietime/screens/comment.dart';
 
-class MovieDetails extends StatelessWidget {
+class MovieDetails extends StatefulWidget {
   static const routeName = '/movie-details';
+
+  @override
+  _MovieDetailsState createState() => _MovieDetailsState();
+}
+
+class _MovieDetailsState extends State<MovieDetails> {
+  bool fav = false;
+  bool heart = false;
+  _pressed() {
+    setState(() {
+      fav = !fav;
+    });
+  }
+
+  _comment() {
+    setState(() {
+      Navigator.of(context).pushNamed(Comment.routecomment);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final routeargs =
@@ -135,61 +156,69 @@ class MovieDetails extends StatelessWidget {
           ],
         ),
       ),
+
+      //buttons
       bottomNavigationBar: Row(
         children: [
           Expanded(
             child: RaisedButton(
-              padding: const EdgeInsets.only(bottom: 20, top: 20),
+              //padding: const EdgeInsets.only(bottom: 20, top: 20),
               onPressed: () {},
               color: Theme.of(context).primaryColor,
               textColor: Colors.white,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.favorite_border),
-                  Container(
-                    height: (MediaQuery.of(context).size.height) * 0.04,
-                    width: (MediaQuery.of(context).size.width) * 0.4,
-                    //height: 5, width: 5
-                    padding: const EdgeInsets.only(left: 8.0),
-                    child: Text(
-                      'Add to favorites',
-                      style: TextStyle(
-                        fontSize: 18,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconButton(
+                      icon: Icon(fav ? Icons.favorite : Icons.favorite_border,
+                          color: fav ? Colors.red : null),
+                      onPressed: () => _pressed(),
+                    ),
+                    Container(
+                      height: (MediaQuery.of(context).size.height) * 0.035,
+                      width: (MediaQuery.of(context).size.width -
+                              MediaQuery.of(context).padding.left) *
+                          0.2,
+                      //height: 5, width: 5
+                      // padding: const EdgeInsets.only(left: 12.0),
+                      child: Text(
+                        ' favorite',
+                        style: TextStyle(
+                          fontSize: 18,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
           Expanded(
             child: RaisedButton(
-              padding: const EdgeInsets.only(bottom: 20, top: 20),
-              onPressed: () {},
+              //  padding: const EdgeInsets.only(bottom: 20, top: 20),
+              onPressed: () => _comment(),
               color: Colors.red[900],
               textColor: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Icon(Icons.comment),
-                    Container(
-                        height: (MediaQuery.of(context).size.height) * 0.04,
-                        width: (MediaQuery.of(context).size.width -
-                                MediaQuery.of(context).padding.left) *
-                            0.4,
-                        padding: const EdgeInsets.only(left: 12.0),
-                        child: Text(
-                          'Add Comment',
-                          style: TextStyle(
-                            fontSize: 17,
-                          ),
-                        )),
-                  ],
-                ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Icon(Icons.comment),
+                  Container(
+                      height: (MediaQuery.of(context).size.height) * 0.08,
+                      width: (MediaQuery.of(context).size.width -
+                              MediaQuery.of(context).padding.left) *
+                          0.23,
+                      padding: const EdgeInsets.only(left: 12.0, top: 20),
+                      child: Text(
+                        'Comment',
+                        style: TextStyle(
+                          fontSize: 17,
+                        ),
+                      )),
+                ],
               ),
             ),
           )

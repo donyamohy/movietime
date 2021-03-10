@@ -1,4 +1,6 @@
-class Movie {
+import 'package:flutter/widgets.dart';
+
+class Movie with ChangeNotifier {
   final String id;
   final String title;
   final String imageUrl;
@@ -7,6 +9,7 @@ class Movie {
   final String rate;
   final String year;
   final String type;
+  bool isFavorite;
 
   Movie(
       {this.id,
@@ -16,8 +19,12 @@ class Movie {
       this.duration,
       this.rate,
       this.year,
-      this.type});
+      this.type,
+      this.isFavorite = false
+      ,});
 }
+
+
 
 void findMovie(List<Movie> movieList, String searchedName) {
   for (var i = 0; i < movieList.length; i++) {

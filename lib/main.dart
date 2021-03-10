@@ -2,8 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:movietime/Registeration/registerform.dart';
+import 'package:movietime/screens/comment.dart';
 import 'package:movietime/screens/settings.dart';
-import 'package:movietime/services/auth.dart';
+import 'package:movietime/providers/auth.dart';
 //import 'screens/get_started.dart';
 import 'movies/movie_screen.dart';
 import 'Registeration/log_in.dart';
@@ -48,6 +49,7 @@ class MyApp extends StatelessWidget {
           //Gerens.routec: (ctx) => Gerens(),
           EditProfilePage.routeEditProfile: (ctx) => EditProfilePage(),
           Settings.routesettings: (ctx) => Settings(),
+          Comment.routecomment: (ctx) => Comment(),
         },
       ),
     );

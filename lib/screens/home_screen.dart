@@ -5,7 +5,7 @@ import '../movies/horizontal_list_item.dart';
 import '../movies/vertical_list_item.dart';
 import '../screens/editprofile.dart';
 import 'package:provider/provider.dart';
-import 'package:movietime/services/auth.dart';
+import 'package:movietime/providers/auth.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routehome = '/home';

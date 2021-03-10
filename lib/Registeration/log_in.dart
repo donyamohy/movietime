@@ -1,7 +1,7 @@
 //import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:movietime/Registeration/registerform.dart';
-import 'package:movietime/services/auth.dart';
+import 'package:movietime/providers/auth.dart';
 import 'package:provider/provider.dart';
 
 class SignIn extends StatefulWidget {

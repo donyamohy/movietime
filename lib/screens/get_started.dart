@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:movietime/main.dart';
-import '../Registeration/log_in.dart';
+//import 'package:movietime/main.dart';
+//mport '../Registeration/log_in.dart';
 import '../Slider/Slide.dart';
 //import 'package:movie_time_app/Slider/slide.dart';
 import '../Slider/slide_item.dart';
 //import 'package:movie_time_app/Registeration/login.dart';
 //import '../Registeration/signup.dart';
 import 'dart:async';
-//import 'Registeration/log_in.dart';
+//import 'package:movietime/providers/auth.dart';
 //import 'package:movie_time_app/login_screen.dart';
 
 class StartScreen extends StatefulWidget {
@@ -66,8 +66,8 @@ class _StartScreenState extends State<StartScreen> {
             // ),
             FlatButton(
               onPressed: () {
-                //  Navigator.of(context)
-                // .pushNamed(AuthenticationWrapper.routerauth);
+                Navigator.of(context)
+                  .pushNamed(AuthenticationWrapper.routerauth);
               },
               child: Text('Get Started',
                   style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold)),
