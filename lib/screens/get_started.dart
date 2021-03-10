@@ -66,8 +66,8 @@ class _StartScreenState extends State<StartScreen> {
             // ),
             FlatButton(
               onPressed: () {
-                Navigator.of(context)
-                  .pushNamed(AuthenticationWrapper.routerauth);
+                //Navigator.of(context)
+                  //.pushNamed(AuthenticationWrapper.routerauth);
               },
               child: Text('Get Started',
                   style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold)),

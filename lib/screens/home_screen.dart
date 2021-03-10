@@ -6,7 +6,7 @@ import '../movies/vertical_list_item.dart';
 import '../screens/editprofile.dart';
 import 'package:provider/provider.dart';
 import 'package:movietime/providers/auth.dart';
-import  '../screens/maps.dart';
+import '../screens/maps.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routehome = '/home';
@@ -84,8 +84,9 @@ class HomeScreen extends StatelessWidget {
                       Navigator.of(context).pushNamed(Settings.routesettings);
                     },
                   )),
-                  new ListTile(
-                  trailing: new Icon(Icons.location_on, color: Colors.grey[800]),
+              new ListTile(
+                  trailing:
+                      new Icon(Icons.location_on, color: Colors.grey[800]),
                   title: new FlatButton(
                     child: Text(
                       'locations',
